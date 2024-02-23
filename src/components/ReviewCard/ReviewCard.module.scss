@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.review_card {
+  border: 10px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.rating {
+  font-size: 24px;
+
+  .star {
+    color: #ddd;
+    margin-right: 5px;
+  }
+
+  .filled {
+    color: #ffcc00; // Choose your desired color for filled stars
+  }
+}
+
+.username {
+  display: flex;
+  justify-content: end;
+}

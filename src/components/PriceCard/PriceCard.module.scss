@@ -1,0 +1,35 @@
+.card {
+  border: 10px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.content {
+  display: flex;
+  gap: 20px;
+}
+
+.image {
+  flex: 1;
+}
+
+.info {
+  flex: 3;
+}
+
+.username {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.price {
+  font-size: 40px;
+}

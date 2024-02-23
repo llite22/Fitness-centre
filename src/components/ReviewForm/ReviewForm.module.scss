@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.rating_add {
+  font-size: 24px;
+
+  .star_add {
+    color: #ddd;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+
+  .filled_add {
+    color: #ffcc00;
+    cursor: pointer;
+  }
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  margin: 0 auto;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--btn);
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.button:hover {
+  background-color: rgba(0, 123, 255, 0.7);
+}
+
+.container textarea {
+  max-width: 1200px;
+  background-color: var(--bgSoft);
+  border: none;
+  border-radius: 5px;
+  color: var(--textColor);
+  font-size: 20px;
+  margin: 0 auto;
+}
+
+.container input {
+  display: none;
+}
