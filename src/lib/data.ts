@@ -4,12 +4,12 @@ import { unstable_noStore as noStore } from "next/cache";
 
 const ITEM_PER_PAGE = 6
 
-export const getPosts = async (page) => {
+export const getPosts = async (page: string) => {
     noStore()
     try {
         connectToDb()
         const count = await Post.find().count();
-        const posts = await Post.find().sort({ createdAt: -1 }).limit(ITEM_PER_PAGE).skip(ITEM_PER_PAGE * (page - 1));
+        const posts = await Post.find().sort({ createdAt: -1 }).limit(ITEM_PER_PAGE).skip(ITEM_PER_PAGE * (+page - 1));
         return { count, posts }
     } catch (error) {
         console.log(error);
