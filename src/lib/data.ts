@@ -2,14 +2,15 @@ import { Post, Price, Review, User, Vacancy } from "./models";
 import { connectToDb } from "./utils";
 import { unstable_noStore as noStore } from "next/cache";
 
-// const ITEM_PER_PAGE = 3
-// .sort({createdAt: -1}).limit(ITEM_PER_PAGE).skip(ITEM_PER_PAGE * (page - 1));
-export const getPosts = async () => {
+const ITEM_PER_PAGE = 6
+
+export const getPosts = async (page) => {
     noStore()
     try {
         connectToDb()
-        const posts = await Post.find().sort({ createdAt: -1 })
-        return posts
+        const count = await Post.find().count();
+        const posts = await Post.find().sort({ createdAt: -1 }).limit(ITEM_PER_PAGE).skip(ITEM_PER_PAGE * (page - 1));
+        return { count, posts }
     } catch (error) {
         console.log(error);
         throw new Error("Failed to get posts");

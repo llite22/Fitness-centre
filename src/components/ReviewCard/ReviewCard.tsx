@@ -32,7 +32,7 @@ const ReviewCard = ({
       <h1>{review.text}</h1>
       <div className={styles.rating}>{generateStars()}</div>
       <div className={styles.username}>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>...Загрузка</div>}>
           <PostUser userId={review.userId} />
         </Suspense>
       </div>

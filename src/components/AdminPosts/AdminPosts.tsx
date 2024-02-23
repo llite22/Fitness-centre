@@ -2,9 +2,10 @@ import { getPosts } from "@/lib/data";
 import styles from "./AdminPosts.module.scss";
 import Image from "next/image";
 import { deletePost } from "@/lib/action";
+import Pagination from "../ui/Pagination/Pagination";
 
-const AdminPosts = async (): Promise<JSX.Element> => {
-  const posts = await getPosts();
+const AdminPosts = async ({ page }: { page: string }): Promise<JSX.Element> => {
+  const { count, posts } = await getPosts(page);
 
   return (
     <div className={styles.container}>
@@ -14,7 +15,7 @@ const AdminPosts = async (): Promise<JSX.Element> => {
           <div className={styles.detail}>
             <Image
               src={post.img || "/noAvatar.png"}
-              alt=""
+              alt="postImage"
               width={50}
               height={50}
             />
@@ -26,6 +27,7 @@ const AdminPosts = async (): Promise<JSX.Element> => {
           </form>
         </div>
       ))}
+      <Pagination count={count} />
     </div>
   );
 };

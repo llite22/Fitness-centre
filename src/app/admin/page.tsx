@@ -10,15 +10,20 @@ import AdminJobsForm from "@/components/AdminJobsForm/AdminJobsForm";
 import AdminPrices from "@/components/AdminPrices/AdminPrices";
 import AdminPricesForm from "@/components/AdminPricesForm/AdminPricesForm";
 
-const AdminPage = async (): Promise<JSX.Element> => {
+const AdminPage = async ({
+  searchParams,
+}: {
+  searchParams: { page: string };
+}): Promise<JSX.Element> => {
   const session: any = await auth();
+  const page = searchParams.page || "1";
 
   return (
     <div className={styles.container}>
       <div className={styles.row}>
         <div className={styles.col}>
           <Suspense fallback={<div>Loading...</div>}>
-            <AdminPosts />
+            <AdminPosts page={page} />
           </Suspense>
         </div>
         <div className={styles.col}>

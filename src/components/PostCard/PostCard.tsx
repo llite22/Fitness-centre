@@ -13,7 +13,7 @@ const PostCard = ({
     slug: string;
     createdAt: Date;
   };
-}):JSX.Element => {
+}): JSX.Element => {
   return (
     <div className={styles.container}>
       <div className={styles.top}>
@@ -28,7 +28,10 @@ const PostCard = ({
       </div>
       <div className={styles.bottom}>
         <h1 className={styles.title}>{post.title}</h1>
-        <p className={styles.desc}>{post.desc}</p>
+        <p className={styles.desc}>
+          {post.desc.substring(0, 30)}
+          {post.desc.length > 30 && "..."}
+        </p>
         <Link className={styles.link} href={`/blog/${post.slug}`}>
           ЧИТАТЬ ДАЛЕЕ
         </Link>
