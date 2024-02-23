@@ -11,7 +11,7 @@ import AdminPrices from "@/components/AdminPrices/AdminPrices";
 import AdminPricesForm from "@/components/AdminPricesForm/AdminPricesForm";
 
 const AdminPage = async (): Promise<JSX.Element> => {
-  const session = await auth();
+  const session: any = await auth();
 
   return (
     <div className={styles.container}>
