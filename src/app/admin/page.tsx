@@ -27,7 +27,7 @@ const AdminPage = async ({
           </Suspense>
         </div>
         <div className={styles.col}>
-          <AdminPostForm userId={session?.user?.id} />
+          <AdminPostForm userId={session.user.id} />
         </div>
       </div>
       <div className={styles.row}>
@@ -47,7 +47,7 @@ const AdminPage = async ({
           </Suspense>
         </div>
         <div className={styles.col}>
-          <AdminJobsForm userId={session?.user?.id} />
+          <AdminJobsForm userId={session.user.id} />
         </div>
       </div>
       <div className={styles.row}>
@@ -57,7 +57,7 @@ const AdminPage = async ({
           </Suspense>
         </div>
         <div className={styles.col}>
-          <AdminPricesForm userId={session?.user?.id} />
+          <AdminPricesForm userId={session.user.id} />
         </div>
       </div>
     </div>

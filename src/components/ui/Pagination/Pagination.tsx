@@ -18,8 +18,8 @@ const Pagination = ({ count }: { count: number }) => {
 
   const handleChangePage = (type: string): void => {
     type === "prev"
-      ? params.set("page", parseInt(page) - 1)
-      : params.set("page", parseInt(page) + 1);
+      ? params.set("page", (parseInt(page) - 1).toString())
+      : params.set("page", (parseInt(page) + 1).toString());
     replace(`${pathname}?${params}`);
   };
 

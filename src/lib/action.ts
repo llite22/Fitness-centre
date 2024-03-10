@@ -5,7 +5,7 @@ import { connectToDb } from "./utils";
 import bcryptjs from 'bcryptjs'
 import { revalidatePath } from "next/cache";
 
-export const addPost = async (prevState, formData) => {
+export const addPost = async (prevState: any, formData: any) => {
     const { title, desc, slug, userId, img } = Object.fromEntries(formData);
 
     try {
@@ -28,7 +28,7 @@ export const addPost = async (prevState, formData) => {
     }
 };
 
-export const deletePost = async (formData) => {
+export const deletePost = async (formData: any) => {
     const { id } = Object.fromEntries(formData);
 
     try {
@@ -44,7 +44,7 @@ export const deletePost = async (formData) => {
     }
 };
 
-export const addUser = async (prevState, formData) => {
+export const addUser = async (prevState: any, formData: any) => {
     const { username, email, password, img } = Object.fromEntries(formData);
     const salt = await bcryptjs.genSalt(10);
     const hashedPassword = await bcryptjs.hash(password, salt);
@@ -67,7 +67,7 @@ export const addUser = async (prevState, formData) => {
     }
 };
 
-export const deleteUser = async (formData) => {
+export const deleteUser = async (formData: any) => {
     const { id } = Object.fromEntries(formData);
 
     try {
@@ -83,7 +83,7 @@ export const deleteUser = async (formData) => {
     }
 };
 
-export const addJob = async (prevState, formData) => {
+export const addJob = async (prevState: any, formData: any) => {
     const { userId, title, contactEmail, img, description } = Object.fromEntries(formData);
 
     try {
@@ -105,7 +105,7 @@ export const addJob = async (prevState, formData) => {
     }
 };
 
-export const deleteJob = async (formData) => {
+export const deleteJob = async (formData: any) => {
     const { id } = Object.fromEntries(formData);
 
     try {
@@ -119,7 +119,7 @@ export const deleteJob = async (formData) => {
     }
 };
 
-export const addPrice = async (prevState, formData) => {
+export const addPrice = async (prevState: any, formData: any) => {
     const { userId, title, description, amount } = Object.fromEntries(formData);
     try {
         connectToDb();
@@ -138,7 +138,7 @@ export const addPrice = async (prevState, formData) => {
     }
 };
 
-export const deletePrice = async (formData) => {
+export const deletePrice = async (formData: any) => {
     const { id } = Object.fromEntries(formData);
     try {
         connectToDb();
@@ -151,7 +151,7 @@ export const deletePrice = async (formData) => {
     }
 };
 
-export const addRewiev = async (prevState, formData) => {
+export const addRewiev = async (prevState: any, formData: any) => {
     const { userId, text, rating } = Object.fromEntries(formData);
     try {
         connectToDb();
@@ -179,7 +179,7 @@ export const handleLogout = async () => {
     await signOut();
 };
 
-export const register = async (previousState, formData) => {
+export const register = async (previousState: any, formData: any) => {
     const { username, email, password, passwordRepeat } = Object.fromEntries(formData)
     if (password !== passwordRepeat) {
         return { error: "Пароли не совпадают" };
@@ -211,12 +211,12 @@ export const register = async (previousState, formData) => {
 };
 
 
-export const login = async (prevState, formData) => {
+export const login = async (prevState: any, formData: any) => {
     const { username, password } = Object.fromEntries(formData);
 
     try {
         await signIn("credentials", { username, password });
-    } catch (error) {
+    } catch (error: any) {
         console.log(error);
 
         if (error.name.includes("CredentialsSignin")) {

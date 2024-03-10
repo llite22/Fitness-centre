@@ -4,7 +4,7 @@ import styles from "./Navbar.module.scss";
 import { auth } from "@/lib/auth";
 
 const Navbar = async (): Promise<JSX.Element> => {
-  const session = await auth();
+  const session: any = await auth();
   return (
     <div className={styles.container}>
       <Link href="/" className={styles.logo}>

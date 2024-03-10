@@ -6,7 +6,7 @@ import { User } from "./models";
 import bcryptjs from "bcryptjs";
 import { authConfig } from "./auth.config";
 
-const login = async (credentials) => {
+const login = async (credentials: any) => {
     try {
         connectToDb()
         console.log(credentials);
