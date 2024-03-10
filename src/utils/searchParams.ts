@@ -1,4 +1,3 @@
-///Для пагинации обязательно!!!!!!!
 export const updateSearchParams = (type: string, value: string): string => {
     // Получить текущие параметры поиска URL
     const searchParams: URLSearchParams = new URLSearchParams(window.location.search);
