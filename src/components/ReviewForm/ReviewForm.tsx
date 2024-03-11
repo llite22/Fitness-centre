@@ -5,7 +5,7 @@ import { addRewiev } from "@/lib/action";
 import styles from "./ReviewForm.module.scss";
 
 const ReviewForm = ({ sessionUser }: { sessionUser: string }): JSX.Element => {
-  const [selectedRating, setSelectedRating] = useState<number | null>(null);
+  const [selectedRating, setSelectedRating] = useState<number | string>('');
   const [state, formAction] = useFormState(addRewiev, undefined);
   const generateStarsAdd = (): JSX.Element[] => {
     const stars = [];
@@ -13,7 +13,7 @@ const ReviewForm = ({ sessionUser }: { sessionUser: string }): JSX.Element => {
       stars.push(
         <span
           key={i}
-          className={i <= selectedRating ? styles.filled_add : styles.star_add}
+          className={i <= +selectedRating ? styles.filled_add : styles.star_add}
           onClick={() => setSelectedRating(i)}
         >
           ★
