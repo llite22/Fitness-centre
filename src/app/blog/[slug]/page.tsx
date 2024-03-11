@@ -4,15 +4,15 @@ import PostUser from "@/components/PostUser/PostUser";
 import { Suspense } from "react";
 import { getPost } from "@/lib/data";
 
-const getData = async (slug: string) => {
-  const responce = await fetch(`http://localhost:3000/api/blog/${slug}`);
+// const getData = async (slug: string) => {
+//   const responce = await fetch(`http://localhost:3000/api/blog/${slug}`);
 
-  if (!responce.ok) {
-    throw new Error("Something went wrong");
-  }
+//   if (!responce.ok) {
+//     throw new Error("Something went wrong");
+//   }
 
-  return responce.json();
-};
+//   return responce.json();
+// };
 
 export const generateMetadata = async ({
   params,
@@ -31,7 +31,7 @@ export const generateMetadata = async ({
 
 const SinglePostPage = async ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
-  const post = await getData(slug);
+  const post = await getPost(slug);
 
   return (
     <div className={styles.container}>

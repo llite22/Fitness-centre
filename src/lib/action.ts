@@ -153,11 +153,12 @@ export const deletePrice = async (formData: any) => {
 
 export const addRewiev = async (prevState: any, formData: any) => {
     const { userId, text, rating } = Object.fromEntries(formData);
+    const textInput = text !== '' ? text : '  '
     try {
         connectToDb();
         const newReview = new Review({
             userId,
-            text,
+            text: textInput,
             rating
         });
         await newReview.save();

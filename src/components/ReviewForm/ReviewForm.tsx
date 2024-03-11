@@ -5,7 +5,7 @@ import { addRewiev } from "@/lib/action";
 import styles from "./ReviewForm.module.scss";
 
 const ReviewForm = ({ sessionUser }: { sessionUser: string }): JSX.Element => {
-  const [selectedRating, setSelectedRating] = useState<number>(0);
+  const [selectedRating, setSelectedRating] = useState<number | null>(null);
   const [state, formAction] = useFormState(addRewiev, undefined);
   const generateStarsAdd = (): JSX.Element[] => {
     const stars = [];
