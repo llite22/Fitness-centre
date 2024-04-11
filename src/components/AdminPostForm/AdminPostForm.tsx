@@ -6,7 +6,7 @@ import { useFormState } from "react-dom";
 
 const AdminPostForm = ({ userId }: { userId: string }): JSX.Element => {
   const [state, formAction] = useFormState(addPost, undefined);
-  const [slug, setSlug] = useState("");
+  const [slug, setSlug] = useState<string>("");
 
   const handleSlugChange = (
     event: React.ChangeEvent<HTMLInputElement>

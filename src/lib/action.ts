@@ -220,7 +220,7 @@ export const login = async (prevState: any, formData: any) => {
     } catch (error: any) {
         console.log(error);
 
-        if (error.name.includes("CredentialsSignin")) {
+        if (error.message.includes("CredentialsSignin")) {
             return { error: "Неверное имя пользователя или пароль" };
         }
         throw error;

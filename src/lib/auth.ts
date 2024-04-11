@@ -9,7 +9,6 @@ import { authConfig } from "./auth.config";
 const login = async (credentials: any) => {
     try {
         connectToDb()
-        console.log(credentials);
         const user = await User.findOne({ username: credentials.username })
         if (!user) {
             throw new Error('Пользователь не найден!')

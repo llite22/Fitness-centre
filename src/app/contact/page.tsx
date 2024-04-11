@@ -5,10 +5,10 @@ const ContactPage = (): JSX.Element => {
     <div className={styles.contact}>
       <div className={styles.contact_info}>
         <p>
-          <strong>Адрес:</strong> Город Псков, Улица Вымышленная, дом 6
+          <strong>Адрес:</strong> Город Москва, Улица Ленина, дом 53
         </p>
         <p>
-          <strong>Телефон:</strong> +7 (123) 456-7890
+          <strong>Телефон:</strong> +7 (795) 554-35-25 
         </p>
         <p>
           <strong>Email:</strong> FitLife@yandex.ru
