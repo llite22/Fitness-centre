@@ -13,7 +13,7 @@ const AdminPrices = async (): Promise<JSX.Element> => {
         <div className={styles.post} key={price.id}>
           <div className={styles.detail}>
             <Image
-              src={price.img || "/noAvatar.png"}
+              src={price.img ? price.img : "/noAvatar.png"}
               alt="avatar"
               width={50}
               height={50}
