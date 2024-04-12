@@ -3,6 +3,8 @@
     flex-direction: column;
     gap: 20px;
     margin-bottom: 20px;
+    height: 630px;
+    position: relative;
   }
   
   .top{
@@ -40,5 +42,7 @@
   }
   
   .link{
+    position: absolute;
+    bottom: 0;
     text-decoration: underline;
   }
