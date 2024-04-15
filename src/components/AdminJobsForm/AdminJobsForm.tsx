@@ -8,7 +8,7 @@ const AdminJobsForm = ({ userId }: { userId: string }): JSX.Element => {
 
   return (
     <form action={formAction} className={styles.container}>
-      <h1>Добавить новый пост</h1>
+      <h1>Добавить новую вакансию</h1>
       <input type="hidden" name="userId" value={userId} />
       <input type="text" name="title" placeholder="заголовок" />
       <input type="email" name="contactEmail" placeholder="контактный email" />
